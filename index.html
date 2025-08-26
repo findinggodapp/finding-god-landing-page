@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finding God: Bible Study App, Psalms, & Games</title>
+  <meta name="description" content="Discover Finding God, the top Christian app for bible study with daily devotionals, all Psalms, interactive flashcards, and a fun word search game. Download now and deepen your faith.">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cor-primaria-amarelo: #ffc107;
+      --cor-secundaria-amarelo: #ffeb3b;
+      --cor-terciaria-verde: #8bc34a;
+      --cor-fundo-geral: #fefefe;
+      --cor-fundo-padrao: #fff8e1;
+      --cor-texto-claro: #ffffff;
+      --cor-texto-principal: #333333;
+      --cor-texto-secundario: #666666;
+      --sombra-leve: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --sombra-media: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--cor-fundo-geral);
+      background-image: radial-gradient(var(--cor-fundo-padrao) 10%, transparent 10%);
+      background-size: 15px 15px;
+      color: var(--cor-texto-principal);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 80px;
+      color: var(--cor-texto-claro);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('background.jpg') no-repeat center center;
+      background-size: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      margin-bottom: 40px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: var(--cor-primaria-amarelo);
+      margin-bottom: 15px;
+      -webkit-text-stroke: none;
+      text-stroke: none;
+    }
+
+    .hero-content p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-weight: 600;
+      color: var(--cor-texto-claro);
+      -webkit-text-stroke: none;
+      text-stroke: none;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 18px 45px;
+      background-color: var(--cor-primaria-amarelo);
+      color: var(--cor-texto-principal);
+      font-weight: bold;
+      font-size: 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: var(--sombra-media);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      /* REMOVED: Text shadow from button text */
+      text-shadow: none;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .section {
+      padding: 80px 0;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: var(--sombra-leve);
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--cor-terciaria-verde);
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background-color: var(--cor-primaria-amarelo);
+      border-radius: 2px;
+    }
+
+    .features-image-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .features-image-section img {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: var(--sombra-media);
+        transition: transform 0.3s ease;
+    }
+
+    .features-image-section img:hover {
+        transform: scale(1.02);
+    }
+
+    .testimonial-block {
+      background-color: #fffde7;
+      padding: 60px 0;
+      text-align: center;
+      color: var(--cor-texto-principal);
+      border-radius: 15px;
+      box-shadow: var(--sombra-leve);
+      margin-bottom: 40px;
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      color: var(--cor-texto-secundario);
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--cor-texto-principal);
+    }
+    
+    .download-section {
+        padding: 80px 0;
+        text-align: center;
+        background-color: #fff8e1;
+        border-radius: 15px;
+        box-shadow: var(--sombra-leve);
+        margin-bottom: 40px;
+    }
+
+    .download-section .cta-button {
+      background-color: var(--cor-primaria-amarelo);
+      color: var(--cor-texto-principal);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      background-color: #e0e0e0;
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 40px;
+    }
+    
+    footer a {
+        color: #000000;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: 600;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      .cta-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Finding God</h1>
+        <p>Your spiritual journey with lightness. <strong>Discover a fresh, modern way to engage with the Bible</strong> anytime, anywhere.</p>
+        <a href="#download" class="cta-button">Start Your Free Adventure</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Find Inspiration in Your Daily Devotionals</h2>
+        <p>Finding God is the <strong>Christian app</strong> that transforms your experience with <strong>Bible study</strong>. With innovative lessons and a welcoming interface, you can cultivate your <strong>faith</strong> in a new and exciting way.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Features That Light Your Path</h2>
+        <div class="features-image-section">
+            <img src="features1.jpg" alt="Finding God Bible study app - Interactive Flash Cards and Psalms.">
+            <img src="features2.jpg" alt="Finding God Bible study app - Word Search Game and Study Lessons.">
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-block">
+      <div class="container">
+          <h2 class="section-title">Stories of Faith and Joy</h2>
+          <p class="testimonial-quote">“Finding God has made my daily <strong>spiritual journey</strong> a joyful and expected part of my day. The interface is beautiful and the <strong>scripture lessons</strong> are so engaging!”</p>
+          <p class="testimonial-author">– Sofia L., User in Toronto, Canada</p>
+      </div>
+    </section>
+
+    <section class="download-section">
+      <div class="container">
+          <h2 class="section-title">Your New Journey Awaits!</h2>
+          <p>Download this <strong>faith-based tool</strong> and transform your relationship with God. It's a modern way to learn and grow with authentic <strong>Bible lessons</strong> and fun activities.</p>
+          <a href="https://play.google.com/store/apps/details?id=yourapp" class="cta-button">Download on Google Play</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <nav>
+        <a href="terms-of-service.html">Terms of Service</a> |
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </nav>
+      <p>&copy; 2025 Finding God. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
